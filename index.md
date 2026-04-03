@@ -1,35 +1,50 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# InteriorAgent-IDSL
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+InteriorAgent-IDSDL is an Interior-Design-aware Scene Description Language for composing structured 3D indoor scenes through high-level object registration, group-based placement, and scene optimization.
 
-More specifically, the created site:
+This documentation is intended to help readers understand what the language can express and how to use it to build scenes efficiently. 
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+## What this documentation covers
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+The language is organized around three main ideas:
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+- **Object registration**  
+  Adding scene assets and highlighting the various functionalities available on them.
 
-To get started with creating a site, simply:
+- **Object placement via groups**  
+  Arranging objects using functional groups as reusable spatial abstractions. We provide several implementations, including relative groups, grid groups, around groups, and room groups.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+- **Scene optimization**  
+  Refining layouts with geometric and higher-level constraints to improve plausibility and spatial coherence. These include both gradient-based and VLM-based constraints.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+Together, these components allow users to describe indoor scenes at a level closer to design intent than low-level 3D manipulation.
 
-----
+Additionally, the language is designed to accommodate advanced tools, including LLMs, diffusion models, and 3D generation repositories.
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+Towards the end of this documentation, you will also find several complete examples of scene creation.
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+## Start here
+
+If you are new to the language, follow these pages in order:
+
+1. [Installation](installation)  
+   Set up the environment and dependencies needed to run InteriorAgent-IDSDL.
+
+2. [Getting Started](getting-started)  
+   Walk through a complete example scene program and learn the overall workflow of writing and exporting a scene.
+
+## About the project
+
+InteriorAgent-IDSDL is part of the Ph.D. thesis work of **Kunal Gupta**, a **CSE Ph.D. student at UC San Diego**. His research investigates how to codify the expertise of artists and designers in computational form, with the broader goal of enabling generative AI systems to perform better on creative tasks.
+
+Within that larger research agenda, InteriorAgent-IDSDL serves as a structured language for expressing interior design intent in a way that is both human-authored and machine-actionable.
+
+## Next step
+
+Continue to [Installation](installation) to set up the system, and then move on to [Getting Started](getting-started) to build your first scene.
