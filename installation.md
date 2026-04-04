@@ -6,36 +6,36 @@ nav_order: 2
 
 # Installation
 
-Start with cloning the github project
+1. Start with cloning the github project
 
 ```bash
 git clone https://github.com/KunalMGupta/interioragent.git
 ```
 
-Create a conda envrionment
+2. Create a conda envrionment
 ```bash
 conda create -n interioragent python=3.12 -y
 conda activate interioragent
 ```
 
-Install dependencies
+3. Install dependencies
 ```bash
 pip install numpy matplotlib trimesh scipy sceneprogllm
 ```
 
-Make sure to follow instructions on ```https://github.com/KunalMGupta/SceneProgExec.git``` to correctly setup ```sceneprogexec``` package.
+4. Make sure to follow instructions on ```https://github.com/KunalMGupta/SceneProgExec.git``` to correctly setup ```sceneprogexec``` package.
 
-Download and extract the ```datasets.zip``` to ```interioragent/IDSDL```
+5. Download and extract the ```datasets.zip``` to ```interioragent/IDSDL```
 ```bash
 unzip dataset.zip
 ```
 
-Setup your OPENAI_API_KEY
+6. Setup your OPENAI_API_KEY
 ```bash
 OPENAI_API_KEY="sk-..."
 ```
 
-And you are done! Try running a simple program to see if it works. 
+7. And you are done! Try running a simple program to see if it works. 
 
 ```python
 from IDSDL.scene import SceneProgRoom
@@ -57,3 +57,5 @@ scene.export("test_scene.blend")
 ```bash
 python firstscene.py
 ```
+
+Next, let's [Get Started](getting-started) on learning more about InteriorAgent project and IDSDL. 
