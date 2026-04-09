@@ -35,7 +35,7 @@ Setup your OPENAI_API_KEY
 OPENAI_API_KEY="sk-..."
 ```
 
-And you are done! Try running a simple program to see if it works. 
+And you are done! Try running a creating a simple scene to see if it works.
 
 ```python
 from IDSDL.scene import SceneProgRoom
@@ -58,4 +58,11 @@ scene.export("test_scene.blend")
 python firstscene.py
 ```
 
-Next, let's [Get Started](getting-started) on learning more about InteriorAgent project and IDSDL. 
+<br>
+<p style="text-align: center;">
+  <img src="assets/installation.png" alt="medium-term" style="width: 80%;">
+</p>
+<br>
+
+## Next step
+Continue to [Object Registration](object-registration) for an overview on InteriorAgent-IDSDL. 

@@ -47,4 +47,4 @@ Within that larger research agenda, InteriorAgent-IDSDL serves as a structured l
 
 ## Next step
 
-Continue to [Installation](installation) to set up the system, and then move on to [Getting Started](getting-started) to build your first scene.
+Continue to [Installation](installation) to set up the system.
