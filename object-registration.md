@@ -1,7 +1,7 @@
 ---
 title: Object Registration
 layout: home
-nav_order: 3
+nav_order: 4
 ---
 
 
@@ -123,6 +123,90 @@ Lastly, interior designers often add lighting specific to an object or object gr
 soda.add_lighting(desc="a simple pendant light", density = 0.5)
 ```
 Here, `desc` is used to retrieve a light source based on its natural language description, while `density` is a floating-point value between 0 and 1 that controls how densely lights should be placed over the object. A value of 0 corresponds roughly to a single light source, while 1 corresponds to many lights distributed across the object. The exact number of lights is automatically determined by IDSDL.
+
+---
+
+## Visual reference
+
+The four scaling modes, rendered top-down (left) and in perspective (right). From left to
+right in each image: **default**, **`modulate_scale=0.5`** (uniformly smaller),
+**`width=0.5`** (narrow), and **`depth=0.5`** (shallow).
+
+<p style="text-align: center;">
+  <img src="assets/scenes/reg_scaling_top.png" alt="scaling top-down" style="width: 48%; display:inline-block;">
+  <img src="assets/scenes/reg_scaling_persp.png" alt="scaling perspective" style="width: 48%; display:inline-block;">
+</p>
+
+Orientation control. From left to right: a chair in its **default** orientation, one rotated
+with **`set_rotation(90)`**, and one using **`face_towards(table)`** to turn toward the
+small table at the top.
+
+<p style="text-align: center;">
+  <img src="assets/scenes/reg_rotation_top.png" alt="rotation top-down" style="width: 48%; display:inline-block;">
+  <img src="assets/scenes/reg_rotation_persp.png" alt="rotation perspective" style="width: 48%; display:inline-block;">
+</p>
+
+---
+
+## API reference
+
+Methods available on every registered object (`SceneProgObject`).
+
+### Creation — `scene.AddAsset(...)`
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `description` | `str` | *required* | Natural-language description used to retrieve a matching asset. |
+| `modulate_scale` | `float` | `1.0` | Uniform scale multiplier applied to the retrieved asset. |
+| `width` | `float` | `None` | If set, rescales the object so its width (X extent) equals this value, in metres. |
+| `depth` | `float` | `None` | If set, rescales the object so its depth (Z extent) equals this value, in metres. |
+
+### Placement & orientation
+
+| Method | Description |
+|---|---|
+| `set_location(x, y, z)` | Place the object's center at a global coordinate. `y` is the height (up) axis. |
+| `set_rotation(deg)` | Set the yaw (rotation about the up axis) in **degrees**. `0` faces +Z (front). |
+| `face_towards(other)` | Rotate the object so its front faces another object or wall. |
+
+### Scaling
+
+| Method | Description |
+|---|---|
+| `scale(target_width)` | Uniformly scale the object so its **width** becomes `target_width` metres (height and depth scale by the same factor). |
+| `scale_only_width(w)` | Set only the width (X extent) to `w` metres. |
+| `scale_only_depth(d)` | Set only the depth (Z extent) to `d` metres. |
+| `scale_only_height(h)` | Set only the height (Y extent) to `h` metres. |
+
+> Note the distinction between `obj.scale(w)`, which takes a **target width in metres**, and
+> `AddAsset(..., modulate_scale=f)`, which takes a **multiplier**.
+
+### Geometry queries
+
+| Method | Returns | Description |
+|---|---|---|
+| `get_location()` | `np.array([x, y, z])` | Current center location. |
+| `get_rotation()` | `float` | Current yaw in degrees. |
+| `get_aabb()` | `np.array([[xmin,ymin,zmin],[xmax,ymax,zmax]])` | Axis-aligned bounding box. For a group, the union AABB of all descendants. |
+| `get_whd()` | `(w, h, d)` | Width, height, depth. |
+| `get_width()` / `get_height()` / `get_depth()` | `float` | Individual extents. |
+| `get_area()` | `float` | Footprint area (width × depth). |
+
+### Copying, rendering, lighting
+
+| Method | Description |
+|---|---|
+| `n * obj` | Returns a list of `n` lightweight copies that share geometry (equivalent to `obj.copy(num=n)`). |
+| `render()` | Renders the object from front/right/back/left; returns a list of image paths. |
+| `add_lighting(desc, density, modulate_scale=1.0)` | Adds ceiling light(s) over the object. `density ∈ [0,1]` controls how many; `modulate_scale` rescales the retrieved light fixture. |
+
+### The `ignore_overlap` flag
+
+Some objects are meant to sit on top of, or underneath, others — a lamp on a nightstand, a
+rug under a bed, a painting on a wall. Setting `obj.ignore_overlap = True` exempts the object
+from overlap and out-of-bounds optimization so it is not pushed away from what it rests on.
+Placement helpers like `place_on_top`, `place_rug`, and the wall-mounting methods set this
+flag automatically.
 
 
 

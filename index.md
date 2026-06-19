@@ -39,6 +39,15 @@ If you are new to the language, follow these pages in order:
 2. [Getting Started](getting-started)  
    Walk through a complete example scene program and learn the overall workflow of writing and exporting a scene.
 
+3. [Object Registration](object-registration)  
+   Add assets and learn everything an object can do: retrieval, scaling, rotation, copying, geometry queries, and lighting.
+
+4. [Groups](groups)  
+   Arrange objects with the four group types — [RelativeGroup](relative-group), [AroundGroup](around-group), [GridGroup](grid-group), and [RoomGroup](room-group) — and learn how groups nest to form [hierarchies](hierarchical).
+
+5. [Constraints](constraints)  
+   Refine layouts with [gradient constraints](gradient-constraints) (overlap, bounds, clearance, access, visibility) and [VLM constraints](vlm-constraints) (proportions, room size, wall overlap).
+
 ## About the project
 
 InteriorAgent-IDSDL is part of the Ph.D. thesis work of **Kunal Gupta**, a **CSE Ph.D. student at UC San Diego**. His research investigates how to codify the expertise of artists and designers in computational form, with the broader goal of enabling generative AI systems to perform better on creative tasks.

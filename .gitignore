@@ -14,3 +14,13 @@ _site/
 .bundle/
 vendor/
 tmp/
+
+# macOS junk
+.DS_Store
+
+# Source .blend files used to generate the figure renders (large; not needed for the site).
+# Only the rendered PNGs under assets/scenes/ are committed.
+assets/scenes/blend/
+
+# Locally generated standalone HTML preview (regenerate with build_preview.py)
+preview.html
