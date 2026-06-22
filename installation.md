@@ -65,4 +65,4 @@ python firstscene.py
 <br>
 
 ## Next step
-Continue to [Object Registration](object-registration) for an overview on InteriorAgent-IDSDL. 
+Continue to [Getting Started](getting-started) for an overview on InteriorAgent-IDSDL. 

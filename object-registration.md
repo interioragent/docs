@@ -120,7 +120,7 @@ Here, `path` is a list of image renders from the front, right, back, and left si
 </p>
 Lastly, interior designers often add lighting specific to an object or object group. This can be enabled using the `add_lighting()` routine.
 ```
-soda.add_lighting(desc="a simple pendant light", density = 0.5)
+sofa.add_lighting(desc="a simple pendant light", density = 0.5)
 ```
 Here, `desc` is used to retrieve a light source based on its natural language description, while `density` is a floating-point value between 0 and 1 that controls how densely lights should be placed over the object. A value of 0 corresponds roughly to a single light source, while 1 corresponds to many lights distributed across the object. The exact number of lights is automatically determined by IDSDL.
 
