@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# InteriorAgent-IDSL
+# InteriorAgent-IDSDL
 
 InteriorAgent-IDSDL is an Interior-Design-aware Scene Description Language for composing structured 3D indoor scenes through high-level object registration, group-based placement, and scene optimization.
 

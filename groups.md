@@ -43,7 +43,7 @@ Relationships](hierarchical).
 
 | Group | Purpose | Key methods |
 |---|---|---|
-| **[RelativeGroup](relative-group)** | Place objects *relative to an anchor* (in front of, beside, behind, on top of). | `set_anchor`, `place_on_front/left/right/back`, `place_on_*_corner`, `place_on_*_further`, `place_on_top`, `place_rug` |
+| **[RelativeGroup](relative-group)** | Place objects *relative to an anchor* (in front of, beside, behind, on top of). | `set_anchor`, `place_on_front/left/right/back`, `place_on_*_further`, `place_on_top`, `place_rug` |
 | **[AroundGroup](around-group)** | Arrange objects *around an anchor* — rings, circles, arcs. | `set_anchor`, `place_rectilinear`, `place_circle`, `place_arc` |
 | **[GridGroup](grid-group)** | Arrange objects in *regular patterns* — rows, grids, borders, arcs. | `place_row`, `place_grid`, `place_rectilinear`, `place_arc` |
 | **[RoomGroup](room-group)** | The top-level container — a room with walls, grid positions, and wall-mounted objects. | `place_on_center/back/front/...`, `place_on_*_wall_*`, `place_walls`, `place_door`, `place_window_*` |

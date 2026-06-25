@@ -20,7 +20,7 @@ conda activate interioragent
 
 Install dependencies
 ```bash
-pip install numpy matplotlib trimesh scipy sceneprogllm
+pip install numpy matplotlib trimesh scipy sceneprogllm langchain-openai Pillow tqdm
 ```
 
 Make sure to follow instructions on [SceneProgExec](https://github.com/KunalMGupta/SceneProgExec.git) to correctly setup ```sceneprogexec``` package.
@@ -32,7 +32,7 @@ unzip datasets.zip -d IDSDL/
 
 Setup your OPENAI_API_KEY
 ```bash
-OPENAI_API_KEY="sk-..."
+export OPENAI_API_KEY="sk-..."
 ```
 
 And you are done! Try running a creating a simple scene to see if it works.
