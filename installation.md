@@ -25,9 +25,9 @@ pip install numpy matplotlib trimesh scipy sceneprogllm
 
 Make sure to follow instructions on [SceneProgExec](https://github.com/KunalMGupta/SceneProgExec.git) to correctly setup ```sceneprogexec``` package.
 
-Download and extract the ```datasets.zip``` to ```interioragent/IDSDL```
+Download `datasets.zip` from [this OneDrive link](https://ucsdcloud-my.sharepoint.com/:u:/g/personal/k5gupta_ucsd_edu/IQA-MyG8SVWHQq4bWCD7amCmAWr9R9hyxe8e6udYgZNZ_TI?e=aX7HBn) and extract it into `interioragent/IDSDL` so the data lands at `IDSDL/datasets/assets/` and `IDSDL/datasets/futurehssd/`:
 ```bash
-unzip dataset.zip
+unzip datasets.zip -d IDSDL/
 ```
 
 Setup your OPENAI_API_KEY
